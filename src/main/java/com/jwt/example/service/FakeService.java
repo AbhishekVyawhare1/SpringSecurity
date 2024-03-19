@@ -20,7 +20,14 @@ public class FakeService {
 		list.add(new User(UUID.randomUUID().toString(), "Virat", "Virat@gmail.com"));
 	}
 
+	// get All
 	public List<User> getAllUsers() {
 		return this.list;
+	}
+
+	// get By Id
+
+	public User getUserById(String id) {
+		return list.stream().filter(e -> e.getUserId().equals(id)).findFirst().get();
 	}
 }
